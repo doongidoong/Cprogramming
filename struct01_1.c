@@ -28,6 +28,6 @@ int main() {
   printf("나이   : %d \n", Psi.age);
   printf("키     : %d \n", Psi.height);
   printf("몸무게 : %d \n", Psi.weight);
-  printf("%s", psf->member);
+  printf("패밀리는 %s", psf->member);
   return 0;
 }

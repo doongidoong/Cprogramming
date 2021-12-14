@@ -1,6 +1,16 @@
 #include <stdio.h>
+typedef struct { // ÇĞ»ı ±¸Á¶Ã¼ Á¤ÀÇ
+int a, b;
+} test;
+
 
 int main(){
-    printf("ë˜ëŠ”êµ¬ë‚˜.");
+    test st;
+    test *ptr;
+    ptr = &st;
+    (*ptr).a = 1;
+    (*ptr).b = 2;
+    printf("%d %d",(*ptr).a,st.b);
+    printf(" Àß³ª¿À´Â±¸³ª!");
     return 0;
 }

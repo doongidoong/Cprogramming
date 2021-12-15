@@ -39,25 +39,113 @@ int set_num(struct BigNum *Num, char *realnum){
 int add(struct BigNum *Num1,struct BigNum *Num2){
     int i_sum[101];
     int d_sum[100];
-/*    
-    if((*Num2).i_total_digit>(*Num2).i_total_digit){
-        n1 = Num1;
-        n2 = Num2;
+    int a = (*Num1).d_total_digit;
+    int b = (*Num2).d_total_digit;
+    int check=0;
+    int num =0;
+    int d=0;
+    int i=0;
+    while(1){
+        if((a==0)&& (b==0)){
+            break;
+        }
+        d++;
+        num=check;
+        check=0;
+        if(a>b){
+            num += (*Num1).d_digit[a-1];
+            if(num>=10){
+                check=1;
+                num -= 10;
+            }
+            d_sum[a-1] = num;
+            a--;}
+        if(a<b){
+            num += (*Num2).d_digit[b-1];
+            if(num>=10){
+                check=1;
+                num -= 10;
+            }
+            d_sum[b-1] = num;
+            b--;}
+        if(a==b){
+            num += (*Num1).d_digit[a-1]+(*Num2).d_digit[b-1];
+            if(num>=10){
+                check=1;
+                num -= 10;
+            }
+            d_sum[a-1] = num;
+            a--;
+            b--;
+        }
     }
-    else {
-        n2 = Num1;
-        n1 = Num2;
+    a = (*Num1).i_total_digit;
+    b = (*Num2).i_total_digit;
+    while(1){
+        if((a==0)||(b==0)){
+            break;
+        }
+        i++;
+        num= check;
+        num += (*Num1).i_digit[a-1]+(*Num2).i_digit[b-1];
+        check=0;
+        if(num>=10){
+            check=1;
+            num -= 10;
+        }
+        if(a>b){
+            i_sum[a-1] = num;
+        }
+        if(b>=a){
+            i_sum[b-1] = num;
+        }
+        a--;
+        b--;
     }
-*/
+    while(a){
+        num= check;
+        num += (*Num1).i_digit[a-1];
+        check=0;
+        if(num>=10){
+            check=1;
+            num -= 10;
+        }
+        i_sum[a-1] = num;
+        a--;
+        if((a==0)&&(check==1)){
+             i_sum[a-1] +=10;
+        }
+        i++;
+    }
+    while(b){
+        num= check;
+        num += (*Num2).i_digit[b-1];
+        check=0;
+        if(num>=10){
+            check=1;
+            num -= 10;
+        }
+        i_sum[b-1] = num;
+        b--;
+        if((b==0)&&(check==1)){
+             i_sum[b-1] +=10;
+        }
+        i++;
+    }
+    for(int s=0;s<i;s++){
+        printf("%d",i_sum[s]);
+    }
+    printf(".");
+    for(int s=0;s<d;s++){
+        printf("%d",d_sum[s]);
+    }
+    return 0;
 
-}
+};
 
 int main(){
     struct BigNum num1;
-    set_num(&num1,"1231413415.23123");
+    set_num(&num1,"1231413415.23188");
     add(&num1,&num1);
    return 0;
-
-
-
 }

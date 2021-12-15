@@ -112,9 +112,6 @@ int add(struct BigNum *Num1,struct BigNum *Num2){
         }
         i_sum[a-1] = num;
         a--;
-        if((a==0)&&(check==1)){
-             i_sum[a-1] +=10;
-        }
         i++;
     }
     while(b){
@@ -127,10 +124,10 @@ int add(struct BigNum *Num1,struct BigNum *Num2){
         }
         i_sum[b-1] = num;
         b--;
-        if((b==0)&&(check==1)){
-             i_sum[b-1] +=10;
-        }
         i++;
+    }
+    if(check==1){
+        i_sum[0]+=10;
     }
     for(int s=0;s<i;s++){
         printf("%d",i_sum[s]);
@@ -146,6 +143,8 @@ int add(struct BigNum *Num1,struct BigNum *Num2){
 int main(){
     struct BigNum num1;
     set_num(&num1,"1231413415.23188");
-    add(&num1,&num1);
+    struct BigNum num2;
+    set_num(&num2,"9991413415.23188");
+    add(&num1,&num2);
    return 0;
 }

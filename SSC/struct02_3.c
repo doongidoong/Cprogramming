@@ -47,6 +47,7 @@ int add(struct BigNum *Num1,struct BigNum *Num2){
     int i=0;
     while(1){
         if((a==0)&& (b==0)){
+            
             break;
         }
         d++;

@@ -59,3 +59,13 @@ return 0;
 
 6. 구조체가 포인터 변수로 사용되는 경우 내부 변수에 접근할 때 화살표(->)를 사용.<br>
 ->가 *보다 우선 순위가 높음
+
+7. 7.구조체 안에 또다른 구조체를 선언할 수 있음<br>
+struct employee {
+  int age;
+  int salary;
+};<br>
+struct company {
+  struct employee data;
+  char name[10];
+};<br>

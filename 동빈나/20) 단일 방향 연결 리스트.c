@@ -28,8 +28,8 @@ void freeAll(Node *root) { // 연결 리스트 메모리 해제 함수
     }
 }
 void showAll(Node *root) { //연결 리스트 전체 출력 함수
-        Node *cur = head->next;
-        while (cur != NULL) {
+    Node *cur = head->next;
+    while (cur != NULL) {
         printf("%d ", cur->data);
         cur = cur->next;
     }

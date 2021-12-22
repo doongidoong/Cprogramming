@@ -1,65 +1,54 @@
 #include <stdio.h>
-#include <stdlib.h>
-
+#define INF 10000
 
 
 typedef struct {
     int data;
-    struct Node *prev;
     struct Node *next;
-    } Node;
-Node *head, *tail;
-
-
-void insert(int data){
-    Node *node = (Node*)malloc(sizeof(Node));
-    node->data = data;
-    Node *cur; 
-    cur = head->next;
-    while(cur->data<data && cur!=tail){
-        cur = cur->next;
-    }
-    Node *prev = cur->prev;
-    prev -> next = node;
-    node -> prev = prev;
-    cur  -> prev = node;
-    node -> next = cur;
-}
-void removeFront() {
-    Node* node = head->next;
-    head->next = node->next;
-    Node* next = node->next;
-    next->prev = head;
-    free(node);
-}
-
-
-
-void show(){
-   Node *cur = head->next;
-   while(cur!=tail){
-       printf("%d", cur->data);
-       cur = cur->next;
-   }
-}
+} Node;
 
 Node *head;
 
-int main(){
+void addFront(Node *root, int data){ //  헤드가 가르키는 것을 내가 만든게 가르키고 헤드가 만든 것을 가르킴
+    Node *node =(Node*)malloc(sizeof(Node));
+    node ->data = data;
+    node ->next = root ->next;
+    root ->next = node;
+}
+
+void removeFront(Node *root){ // ㅁ-> ㅁ-> ㅁ->
+    Node *node = root->next;
+    root->next = node->next;
+    free(node);
+}
+void freeAll(Node *root) { // 연결 리스트 메모리 해제 함수
+    Node *cur = root->next;
+    while(cur){
+        Node *next = cur->next;
+        free(cur);
+        cur = next; 
+    }
+}
+void showAll(Node *root) { //연결 리스트 전체 출력 함수
+    Node *cur = root->next;
+    while(cur!=NULL){
+        printf("%d ", cur->data);
+        cur = cur->next;
+    }
+}
+
+
+int main(void) {
     head = (Node*) malloc(sizeof(Node));
-    tail = (Node*) malloc(sizeof(Node));
-    head->next = tail;
-    head->prev = head;
-    tail->next = tail;
-    tail->prev = head;
-    insert(2);
-    insert(1);
-    insert(3);
-    insert(9);
-    insert(7);
-    removeFront();
-    show();
+    head->next = NULL;
+    addFront(head, 2);
+    addFront(head, 1);
+    addFront(head, 7);
+    addFront(head, 9);
+    addFront(head, 8);
+    removeFront(head);
+    showAll(head);
+    freeAll(head);
     system("pause");
     return 0;
-
 }

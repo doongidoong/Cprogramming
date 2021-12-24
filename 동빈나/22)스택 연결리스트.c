@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define INF 99999999
-
 typedef struct { //스택의 선언   
     int data;
     struct Node *next;

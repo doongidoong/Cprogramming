@@ -22,23 +22,21 @@ int main() {
 		}
 		printf("\n");
 	}
-	int c = 1;
-	int i = c - 1;
+	int i;
 	int k;
-	for (k = c - 1; k <= size - c; k++)printf(" %d", arr[i][k]);// 00 01 02 03 
-	for (i = c; i <= size - c; i++)printf(" %d", arr[i][k - 1]); // 13 23 33
-
-	for (k = size - c - 1; k >= c - 1; k--)printf(" %d", arr[i - 1][k]); // 32 31 30
-	for (i = size - c - 1; i > c - 1; i--)printf(" %d", arr[i][k + i]); // 20 10 
-
-
-	c = 2;
+	int c = 1;
+	while(c<=size/2){
 	i = c - 1;
 	for (k = c - 1; k <= size - c; k++)printf(" %d", arr[i][k]);// 00 01 02 03 
 	for (i = c; i <= size - c; i++)printf(" %d", arr[i][k - 1]); // 13 23 33
 
+	for (k = size - c - 1; k >= c - 1; k--)printf(" %d", arr[i - 1][k]); // 32 31 30
+	for (i = i- 2; i >= c ; i--)printf(" %d", arr[i][k + 1]); // 20 10 
+	c++;
+	}
+	if (size % 2 != 0) {
+		printf(" %d", arr[(c+1)/2][(c + 1) / 2]);
+	}
 
-
-	printf(" \n %d , %d ", i, k);
 	return 0;
 }

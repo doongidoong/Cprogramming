@@ -2,42 +2,43 @@
 #include <stdio.h>
 
 int main() {
-    char arr[100];
+    char arr[1000000];
     char alphabet[26] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
         'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
     int index[26] = { 0 };
     int i = 0;
     scanf("%s", arr);
-  
+
     while (arr[i]) {
-        if (arr[i] >= 'A' && arr[i] <= 'Z') {
+        if (arr[i] >= 65 && arr[i] <= 96) {
             arr[i] += 32;
         }
         for (int j = 0; j < 26; j++) {
             if ((alphabet[j] == arr[i])) {
-                index[j] += 1 ;
+                index[j] += 1;
             }
         }
         i++;
     }
     int maxn = 0;
-    int j;
-    for (j = 0; j < 26; j++) {
+    int order;
+    for (int j = 0; j < 26; j++) {
         if (maxn < index[j]) {
-            index[j] = maxn;
+            maxn = index[j];
+            order = j;
         }
     }
-    int count = 0;
-    for (int k = 0; k < 26; k++) {
-        if (maxn == index[k]) {
-            count++;
+    int check = 0;
+    for (int j = 0; j < 26; j++) {
+        if (maxn == index[j]) {
+            check++;
         }
     }
-    if (count > 1) {
+    if (check > 1) {
         printf("?");
-        return 0;
     }
-    else { 
-        printf("%c", alphabet[j - 1]);
-        return 0; }
+    else {
+        printf("%c", alphabet[order]-32);
+    }
+    return 0;
 }

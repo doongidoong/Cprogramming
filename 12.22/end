@@ -1,0 +1,204 @@
+[33mcommit f829acbc2fc3afe4fc6b4afdffe8e31746f7aa01[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Jihun Lee <wlgns3398@naver.com>
+Date:   Wed Dec 22 15:01:00 2021 +0900
+
+    초기 커밋.
+
+[1mdiff --git a/Project1.sln b/Project1.sln[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3d76f28[m
+[1m--- /dev/null[m
+[1m+++ b/Project1.sln[m
+[36m@@ -0,0 +1,31 @@[m
+[32m+[m[32m﻿[m
+[32m+[m[32mMicrosoft Visual Studio Solution File, Format Version 12.00[m
+[32m+[m[32m# Visual Studio 15[m
+[32m+[m[32mVisualStudioVersion = 15.0.28307.1758[m
+[32m+[m[32mMinimumVisualStudioVersion = 10.0.40219.1[m
+[32m+[m[32mProject("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Project1", "Project1.vcxproj", "{077E21E6-0599-4D57-9823-CF422D4216F2}"[m
+[32m+[m[32mEndProject[m
+[32m+[m[32mGlobal[m
+[32m+[m	[32mGlobalSection(SolutionConfigurationPlatforms) = preSolution[m
+[32m+[m		[32mDebug|x64 = Debug|x64[m
+[32m+[m		[32mDebug|x86 = Debug|x86[m
+[32m+[m		[32mRelease|x64 = Release|x64[m
+[32m+[m		[32mRelease|x86 = Release|x86[m
+[32m+[m	[32mEndGlobalSection[m
+[32m+[m	[32mGlobalSection(ProjectConfigurationPlatforms) = postSolution[m
+[32m+[m		[32m{077E21E6-0599-4D57-9823-CF422D4216F2}.Debug|x64.ActiveCfg = Debug|x64[m
+[32m+[m		[32m{077E21E6-0599-4D57-9823-CF422D4216F2}.Debug|x64.Build.0 = Debug|x64[m
+[32m+[m		[32m{077E21E6-0599-4D57-9823-CF422D4216F2}.Debug|x86.ActiveCfg = Debug|Win32[m
+[32m+[m		[32m{077E21E6-0599-4D57-9823-CF422D4216F2}.Debug|x86.Build.0 = Debug|Win32[m
+[32m+[m		[32m{077E21E6-0599-4D57-9823-CF422D4216F2}.Release|x64.ActiveCfg = Release|x64[m
+[32m+[m		[32m{077E21E6-0599-4D57-9823-CF422D4216F2}.Release|x64.Build.0 = Release|x64[m
+[32m+[m		[32m{077E21E6-0599-4D57-9823-CF422D4216F2}.Release|x86.ActiveCfg = Release|Win32[m
+[32m+[m		[32m{077E21E6-0599-4D57-9823-CF422D4216F2}.Release|x86.Build.0 = Release|Win32[m
+[32m+[m	[32mEndGlobalSection[m
+[32m+[m	[32mGlobalSection(SolutionProperties) = preSolution[m
+[32m+[m		[32mHideSolutionNode = FALSE[m
+[32m+[m	[32mEndGlobalSection[m
+[32m+[m	[32mGlobalSection(ExtensibilityGlobals) = postSolution[m
+[32m+[m		[32mSolutionGuid = {F2A9BF75-AFB3-43DF-A46A-470530AEC248}[m
+[32m+[m	[32mEndGlobalSection[m
+[32m+[m[32mEndGlobal[m
+[1mdiff --git a/Project1.vcxproj b/Project1.vcxproj[m
+[1mnew file mode 100644[m
+[1mindex 0000000..94d26eb[m
+[1m--- /dev/null[m
+[1m+++ b/Project1.vcxproj[m
+[36m@@ -0,0 +1,130 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="utf-8"?>[m
+[32m+[m[32m<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">[m
+[32m+[m[32m  <ItemGroup Label="ProjectConfigurations">[m
+[32m+[m[32m    <ProjectConfiguration Include="Debug|Win32">[m
+[32m+[m[32m      <Configuration>Debug</Configuration>[m
+[32m+[m[32m      <Platform>Win32</Platform>[m
+[32m+[m[32m    </ProjectConfiguration>[m
+[32m+[m[32m    <ProjectConfiguration Include="Release|Win32">[m
+[32m+[m[32m      <Configuration>Release</Configuration>[m
+[32m+[m[32m      <Platform>Win32</Platform>[m
+[32m+[m[32m    </ProjectConfiguration>[m
+[32m+[m[32m    <ProjectConfiguration Include="Debug|x64">[m
+[32m+[m[32m      <Configuration>Debug</Configuration>[m
+[32m+[m[32m      <Platform>x64</Platform>[m
+[32m+[m[32m    </ProjectConfiguration>[m
+[32m+[m[32m    <ProjectConfiguration Include="Release|x64">[m
+[32m+[m[32m      <Configuration>Release</Configuration>[m
+[32m+[m[32m      <Platform>x64</Platform>[m
+[32m+[m[32m    </ProjectConfiguration>[m
+[32m+[m[32m  </ItemGroup>[m
+[32m+[m[32m  <PropertyGroup Label="Globals">[m
+[32m+[m[32m    <VCProjectVersion>15.0</VCProjectVersion>[m
+[32m+[m[32m    <ProjectGuid>{077E21E6-0599-4D57-9823-CF422D4216F2}</ProjectGuid>[m
+[32m+[m[32m    <RootNamespace>Project1</RootNamespace>[m
+[32m+[m[32m    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>[m
+[32m+[m[32m  </PropertyGroup>[m
+[32m+[m[32m  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />[m
+[32m+[m[32m  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">[m
+[32m+[m[32m    <ConfigurationType>Application</ConfigurationType>[m
+[32m+[m[32m    <UseDebugLibraries>true</UseDebugLibraries>[m
+[32m+[m[32m    <PlatformToolset>v141</PlatformToolset>[m
+[32m+[m[32m    <CharacterSet>MultiByte</CharacterSet>[m
+[32m+[m[32m  </PropertyGroup>[m
+[32m+[m[32m  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">[m
+[32m+[m[32m    <ConfigurationType>Application</ConfigurationType>[m
+[32m+[m[32m    <UseDebugLibraries>false</UseDebugLibraries>[m
+[32m+[m[32m    <PlatformToolset>v141</PlatformToolset>[m
+[32m+[m[32m    <WholeProgramOptimization>true</WholeProgramOptimization>[m
+[32m+[m[32m    <CharacterSet>MultiByte</CharacterSet>[m
+[32m+[m[32m  </PropertyGroup>[m
+[32m+[m[32m  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">[m
+[32m+[m[32m    <ConfigurationType>Application</ConfigurationType>[m
+[32m+[m[32m    <UseDebugLibraries>true</UseDebugLibraries>[m
+[32m+[m[32m    <PlatformToolset>v141</PlatformToolset>[m
+[32m+[m[32m    <CharacterSet>MultiByte</CharacterSet>[m
+[32m+[m[32m  </PropertyGroup>[m
+[32m+[m[32m  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">[m
+[32m+[m[32m    <ConfigurationType>Application</ConfigurationType>[m
+[32m+[m[32m    <UseDebugLibraries>false</UseDebugLibraries>[m
+[32m+[m[32m    <PlatformToolset>v141</PlatformToolset>[m
+[32m+[m[32m    <WholeProgramOptimization>true</WholeProgramOptimization>[m
+[32m+[m[32m    <CharacterSet>MultiByte</CharacterSet>[m
+[32m+[m[32m  </PropertyGroup>[m
+[32m+[m[32m  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />[m
+[32m+[m[32m  <ImportGroup Label="ExtensionSettings">[m
+[32m+[m[32m  </ImportGroup>[m
+[32m+[m[32m  <ImportGroup Label="Shared">[m
+[32m+[m[32m  </ImportGroup>[m
+[32m+[m[32m  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">[m
+[32m+[m[32m    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />[m
+[32m+[m[32m  </ImportGroup>[m
+[32m+[m[32m  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">[m
+[32m+[m[32m    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />[m
+[32m+[m[32m  </ImportGroup>[m
+[32m+[m[32m  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">[m
+[32m+[m[32m    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />[m
+[32m+[m[32m  </ImportGroup>[m
+[32m+[m[32m  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">[m
+[32m+[m[32m    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />[m
+[32m+[m[32m  </ImportGroup>[m
+[32m+[m[32m  <PropertyGroup Label="UserMacros" />[m
+[32m+[m[32m  <PropertyGroup />[m
+[32m+[m[32m  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">[m
+[32m+[m[32m    <ClCompile>[m
+[32m+[m[32m      <WarningLevel>Level3</WarningLevel>[m
+[32m+[m[32m      <Optimization>Disabled</Optimization>[m
+[32m+[m[32m      <SDLCheck>true</SDLCheck>[m
+[32m+[m[32m      <ConformanceMode>true</ConformanceMode>[m
+[32m+[m[32m    </ClCompile>[m
+[32m+[m[32m    <Link>[m
+[32m+[m[32m      <SubSystem>Console</SubSystem>[m
+[32m+[m[32m    </Link>[m
+[32m+[m[32m  </ItemDefinitionGroup>[m
+[32m+[m[32m  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">[m
+[32m+[m[32m    <ClCompile>[m
+[32m+[m[32m      <WarningLevel>Level3</WarningLevel>[m
+[32m+[m[32m      <Optimization>Disabled</Optimization>[m
+[32m+[m[32m      <SDLCheck>true</SDLCheck>[m
+[32m+[m[32m      <ConformanceMode>true</ConformanceMode>[m
+[32m+[m[32m    </ClCompile>[m
+[32m+[m[32m    <Link>[m
+[32m+[m[32m      <SubSystem>Console</SubSystem>[m
+[32m+[m[32m    </Link>[m
+[32m+[m[32m  </ItemDefinitionGroup>[m
+[32m+[m[32m  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">[m
+[32m+[m[32m    <ClCompile>[m
+[32m+[m[32m      <WarningLevel>Level3</WarningLevel>[m
+[32m+[m[32m      <Optimization>MaxSpeed</Optimization>[m
+[32m+[m[32m      <FunctionLevelLinking>true</FunctionLevelLinking>[m
+[32m+[m[32m      <IntrinsicFunctions>true</IntrinsicFunctions>[m
+[32m+[m[32m      <SDLCheck>true</SDLCheck>[m
+[32m+[m[32m      <ConformanceMode>true</ConformanceMode>[m
+[32m+[m[32m    </ClCompile>[m
+[32m+[m[32m    <Link>[m
+[32m+[m[32m      <SubSystem>Console</SubSystem>[m
+[32m+[m[32m      <EnableCOMDATFolding>true</EnableCOMDATFolding>[m
+[32m+[m[32m      <OptimizeReferences>true</OptimizeReferences>[m
+[32m+[m[32m    </Link>[m
+[32m+[m[32m  </ItemDefinitionGroup>[m
+[32m+[m[32m  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">[m
+[32m+[m[32m    <ClCompile>[m
+[32m+[m[32m      <WarningLevel>Level3</WarningLevel>[m
+[32m+[m[32m      <Optimization>MaxSpeed</Optimization>[m
+[32m+[m[32m      <FunctionLevelLinking>true</FunctionLevelLinking>[m
+[32m+[m[32m      <IntrinsicFunctions>true</IntrinsicFunctions>[m
+[32m+[m[32m      <SDLCheck>true</SDLCheck>[m
+[32m+[m[32m      <ConformanceMode>true</ConformanceMode>[m
+[32m+[m[32m    </ClCompile>[m
+[32m+[m[32m    <Link>[m
+[32m+[m[32m      <SubSystem>Console</SubSystem>[m
+[32m+[m[32m      <EnableCOMDATFolding>true</EnableCOMDATFolding>[m
+[32m+[m[32m      <OptimizeReferences>true</OptimizeReferences>[m
+[32m+[m[32m    </Link>[m
+[32m+[m[32m  </ItemDefinitionGroup>[m
+[32m+[m[32m  <ItemGroup>[m
+[32m+[m[32m  </ItemGroup>[m
+[32m+[m[32m  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />[m
+[32m+[m[32m  <ImportGroup Label="ExtensionTargets">[m
+[32m+[m[32m  </ImportGroup>[m
+[32m+[m[32m</Project>[m
+\ No newline at end of file[m
+[1mdiff --git a/Project1.vcxproj.filters b/Project1.vcxproj.filters[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f7319c2[m
+[1m--- /dev/null[m
+[1m+++ b/Project1.vcxproj.filters[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m﻿<?xml version="1.0" encoding="utf-8"?>[m
+[32m+[m[32m<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">[m
+[32m+[m[32m  <ItemGroup>[m
+[32m+[m[32m    <Filter Include="소스 파일">[m
+[32m+[m[32m      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>[m
+[32m+[m[32m      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>[m
+[32m+[m[32m    </Filter>[m
+[32m+[m[32m    <Filter Include="헤더 파일">[m
+[32m+[m[32m      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>[m
+[32m+[m[32m      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>[m
+[32m+[m[32m    </Filter>[m
+[32m+[m[32m    <Filter Include="리소스 파일">[m
+[32m+[m[32m      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>[m
+[32m+[m[32m      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>[m
+[32m+[m[32m    </Filter>[m
+[32m+[m[32m  </ItemGroup>[m
+[32m+[m[32m</Project>[m
+\ No newline at end of file[m

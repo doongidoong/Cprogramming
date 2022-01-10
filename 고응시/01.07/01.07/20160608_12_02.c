@@ -147,7 +147,7 @@ int Seq_search(int *arr, int size) {
 	scanf("%d", &num);
 	for (int i = 0; i < size; i++) {
 		if (num == arr[i]) {
-			printf("%d is located in %d \n", num, i);
+			printf("%2d was found at %d \n", num, i);
 			return 0;
 		}
 	}
@@ -165,7 +165,7 @@ int Bin_search(int* arr, int size) {
 	while (lt <= rt) {
 		mid = (lt + rt) / 2;
 		if (arr[mid] == num) {
-			printf("%d is located in %d \n", num, mid);
+			printf("%2d was found at %d \n", num, mid);
 			return 0;
 		}
 		else if(arr[mid] > num) {

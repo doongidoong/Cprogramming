@@ -1,0 +1,2 @@
+DataList : 2, 11, 7, 5, 11, 19, 5, 20, 18, 15
+The number that occured the most frequently : 5, 11
